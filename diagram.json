@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Dhiraj B Bendre",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 13.33, "left": -119.34, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -25.47, "left": 75.07, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 125,
+      "left": 48.47,
+      "attrs": { "travelLength": "30" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "servo1:PWM", "esp:VIN", "black", [ "h0" ] ],
+    [ "servo1:GND", "esp:GND.2", "red", [ "h0" ] ],
+    [ "servo1:V+", "esp:D27", "violet", [ "h0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "pot1:SIG", "esp:D27", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
